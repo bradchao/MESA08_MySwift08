@@ -18,11 +18,12 @@ protocol p1 {
 }
 
 class Triangle: Super3, Shape, p1 {
+    var w = 3, h = 4
     func calLength() -> Double{
-        return 1.2
+        return Double(w + w + w)
     }
     func calArea() -> Double {
-        return 1.3
+        return Double(w * h)
     }
     func p2() {
         
@@ -30,11 +31,15 @@ class Triangle: Super3, Shape, p1 {
     
 }
 class Circle : Shape {
+    var r = 3
     func calLength() -> Double{
-        return 1.2
+        return Double(r * 2) * 3.14
     }
     func calArea() -> Double {
-        return 1.3
+        return Double(r * r) * 3.14
     }
+}
+func getArea(obj:Shape) -> Double{
+    return obj.calArea()
 }
 

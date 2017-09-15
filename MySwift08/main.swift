@@ -91,6 +91,49 @@ extension String {
 var brad1 = "Brad"
 brad1.m1()
 brad1.m2()
+print("-----")
+var shape1:Triangle = Triangle()
+var shape2:Circle = Circle()
+var shape3:Shape = Triangle()
+var shape4:Shape = Circle()
+// var shape5:Shape = Shape()
+print(shape3 is Shape)
+print(shape3 is Triangle)
+print(shape3 is Super3)
+shape3.calArea()
+shape3.calLength()
+(shape3 as! Triangle).m1()
+print("-----")
+print(getArea(obj: shape1))
+print(getArea(obj: shape2))
+print(getArea(obj: shape3))
+print(getArea(obj: shape4))
+
+class Super7 {
+    init() {
+        
+    }
+    required init(x:Int){
+        print("Super7:init(Int)")
+    }
+    
+}
+class Sub71 : Super7 {
+    override init() {
+        print("Sub71:init()")
+        super.init(x: 4)
+    }
+    required init(x: Int) {
+        print("Sub71:init(Int)")
+        super.init(x: 3)
+    }
+    convenience init(x:String) {
+        self.init(x: 3)
+    }
+}
+class Sup72 : Super7 {
+    
+}
 
 
 
