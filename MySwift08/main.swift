@@ -46,10 +46,15 @@ var objSub31 = Sub31()
 var objSub32 = Sub32()
 var objSub33 = Sub33()
 var obj1 = objSub33 as Super3   // 向上super轉型
+print("----->>>>")
+obj1.m1()
+objSub33.m1()
+
+
 print(type(of:obj1))
 objSub33.m2()
 //obj1.m2()
-var obj2 = obj1 as! Sub33   // 向下Sub !強制轉型
+var obj2:Sub33 = obj1 as! Sub33   // 向下Sub !強制轉型
 obj2.m2()
 print("-----")
 print(objSub31 === objSub32)
@@ -58,6 +63,34 @@ print(obj2 === obj1)
 print("-----")
 //var pbj3 = objSuper3 as! Sub33  // 將Super3物件實體, 向下強制轉型
 
+let pad3g1:iPad3G = iPad3G()
+let pad1:iPad = pad3g1     // 自動轉型 sub -> super
+let pad3g2:iPad3G = pad1 as! iPad3G
+print("-----")
+doM1(obj: objSub33)
+doSomething(obj: s11)
+doSomething(obj: s12)
+doSomething(obj: obj1)
+//doSomething(obj: 3)
+doV2(any: "Brad")
+doV2(any: 123)
+doV2(any: s11)
+
+var obj4 = Sub33()
+obj4.m3()
+print("-----")
+extension String {
+    func m1(){
+        print("I am m1()")
+    }
+    func m2(){
+        print("I am m2()")
+    }
+}
+
+var brad1 = "Brad"
+brad1.m1()
+brad1.m2()
 
 
 

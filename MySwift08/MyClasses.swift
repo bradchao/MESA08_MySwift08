@@ -85,22 +85,44 @@ class Sub32 : Super3 {
     }
 }
 class Sub33 : Super3 {
+    override func m1() {
+        print("Sub33:m1()")
+    }
     func m2(){
-        print("Sub32:m2()")
+        print("Sub33:m2()")
     }
 }
 
 func doM1(obj:Super3){
     obj.m1()
+    if obj is Sub33 {
+        (obj as! Sub33).m2()
+    }
 }
 func doM1(obj2:Sub33){
     obj2.m1()
     obj2.m2()
 }
 
+class iPad {
+    
+}
+class iPad3G : iPad {
+    
+}
 
+func doSomething(obj: AnyObject){
+    print("do something")
+}
+func doV2(any: Any){
+    print("do Any")
+}
 
-
+extension Sub33 {
+    func m3(){
+        print("I am m3()")
+    }
+}
 
 
 
