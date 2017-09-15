@@ -62,6 +62,9 @@ class Super3 {
     init() {
         print("Super3:init()")
     }
+    func m1(){
+        print("Super3:m1()")
+    }
 }
 class Sub31 : Super3 {
     override init() {
@@ -72,6 +75,27 @@ class Sub31 : Super3 {
         self.init()
         //super.init() ==> 已經存在 self.init(), 就不可以再呼叫 sper.init()
     }
+    override func m1() {
+        print("Sub31:m1()")
+    }
+}
+class Sub32 : Super3 {
+    override func m1() {
+        print("Sub32:m1()")
+    }
+}
+class Sub33 : Super3 {
+    func m2(){
+        print("Sub32:m2()")
+    }
+}
+
+func doM1(obj:Super3){
+    obj.m1()
+}
+func doM1(obj2:Sub33){
+    obj2.m1()
+    obj2.m2()
 }
 
 
